@@ -24,7 +24,7 @@ export function Header() {
           </Link>
         </li>
         <li className={styles.navItem}>
-          <Link to="/site-performance" className={styles.link}>
+          <Link to="/performance" className={styles.link}>
             Site Performace
           </Link>
         </li>

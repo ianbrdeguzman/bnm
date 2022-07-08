@@ -2,13 +2,12 @@ import cn from 'classnames';
 
 import styles from './MetricCard.module.scss';
 
-interface Props {
+export interface Props {
   name: string;
-  count: number;
-  percentile: number;
-  delta: number;
+  count: string;
+  percentile: string;
+  delta: string;
   className?: string;
-  type?: 'time' | 'percentage';
 }
 
 export function MetricCard({
@@ -16,11 +15,9 @@ export function MetricCard({
   count,
   percentile,
   delta,
-  type,
   className
 }: Props) {
-  const status = delta > 0 ? 'positive' : 'negative';
-  const postfix = type === 'time' ? 's' : type === 'percentage' ? '%' : '';
+  const status = delta.includes('-') ? 'negative' : 'positive';
 
   return (
     <article className={cn(styles.container, className)}>
@@ -30,8 +27,8 @@ export function MetricCard({
       <div className={styles.contentContainer}>
         <div className={styles.content}>
           <p className={styles.count}>
-            {count.toLocaleString()}
-            {postfix} | <span className={styles[status]}>{percentile}%</span>
+            {count} |{' '}
+            <span className={styles[status]}>{percentile.slice(0, -2)}%</span>
           </p>
           <div className={styles.imageContainer}>
             <img
