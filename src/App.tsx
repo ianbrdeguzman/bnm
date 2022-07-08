@@ -10,7 +10,7 @@ export default function App() {
       <Route path="/" element={<Layout />}>
         <Route index element={<Overview />} />
         <Route path="/traffic" element={<Traffic />} />
-        <Route path="/site-performance" element={<SitePerformance />} />
+        <Route path="/performance" element={<SitePerformance />} />
       </Route>
     </Routes>
   );
