@@ -10,6 +10,12 @@ export interface Props {
   className?: string;
 }
 
+function format(count: string): number {
+  return count.includes('s') || count.includes('%')
+    ? +count.slice(0, -1)
+    : +count;
+}
+
 export function MetricCard({
   name,
   count,
@@ -27,7 +33,7 @@ export function MetricCard({
       <div className={styles.contentContainer}>
         <div className={styles.content}>
           <p className={styles.count}>
-            {count} |{' '}
+            {format(count).toLocaleString()} |{' '}
             <span className={styles[status]}>{percentile.slice(0, -2)}%</span>
           </p>
           <div className={styles.imageContainer}>
