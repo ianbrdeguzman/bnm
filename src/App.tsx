@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import { Overview } from './pages/Overview';
-import { SitePerformance } from './pages/SitePerformance';
 import { Traffic } from './pages/Traffic';
+import { SitePerformance } from './pages/SitePerformance';
 
 export default function App() {
   return (
