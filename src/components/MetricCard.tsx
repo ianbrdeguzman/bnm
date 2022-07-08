@@ -47,7 +47,7 @@ export function MetricCard({
           Your performance from last week{' '}
           <span className={styles[status]}>
             {status === 'positive' && '+'}
-            {delta}%
+            {delta}
           </span>
         </p>
       </div>

@@ -44,7 +44,7 @@
 }
 
 .link {
-  width: fit-content;
+  width: 100%;
   color: #fff;
   font-size: 0.75rem;
   text-decoration: none;
@@ -53,4 +53,8 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
   overflow: hidden;
+
+  @media (min-width: 48rem) {
+    width: fit-content;
+  }
 }
